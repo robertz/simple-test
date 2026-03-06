@@ -1,0 +1,41 @@
+class {
+	/**
+	 * --------------------------------------------------------------------------
+	 * Application Properties: Modify as you see fit!
+	 * --------------------------------------------------------------------------
+	 */
+	this.name                 = "cache-test";
+	this.charset              = "UTF-8";
+	this.sessionManagement    = true;
+	this.clientManagement     = true;
+	this.sessionTimeout       = createTimespan( 30, 0, 0, 0 );
+	this.clientTimeout        = createTimespan( 30, 0, 0, 0 );
+	this.setClientCookies     = true;
+	this.setDomainCookies     = true;
+	this.scriptProtect        = false;
+	this.secureJSON           = false;
+	this.timezone             = "UTC";
+	this.whiteSpaceManagement = "smart";
+
+	this.datasource = "mysql";
+
+	this.caches = {
+		"myCache": {
+			"enabled": true,
+			"provider": "BoxCacheProvider",
+			"properties": {
+				"objectStore": "JDBCStore",
+				"datasource": "mysql",
+				"table": "dismal_cache",
+				"autoCreate": true,
+				"maxObjects": 10000,
+				"evictionPolicy": "LRU",
+				"evictCount": 500,
+				"defaultTimeout": 3600,
+				"defaultLastAccessTimeout": 1800,
+				"reapFrequency": 300
+			}
+		}
+	}
+
+}

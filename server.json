@@ -1,0 +1,18 @@
+{
+    "app":{
+        "cfengine":"boxlang",
+        "engineConfigFile":"boxlang.json"
+    },
+    "modules":{
+        "compat":{
+            "enabled":true,
+            "settings":{
+                "isLucee":true,
+                "isAdobe":false
+            }
+        }
+    },
+    "scripts":{
+        "onServerInitialInstall":"install bx-mysql"
+    }
+}

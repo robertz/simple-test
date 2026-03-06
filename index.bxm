@@ -1,0 +1,3 @@
+<bx:script>
+	dump(queryExecute("SELECT id_short, title FROM Posts", {datasource:"mysql"}));
+</bx:script>
